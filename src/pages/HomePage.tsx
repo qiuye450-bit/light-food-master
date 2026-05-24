@@ -99,7 +99,7 @@ export default function HomePage() {
 
         const aiResults: Recipe[] = []
         for (const mealType of missing) {
-          const aiRecipe = await generateRecipeWithAI(user.anthropicKey, ingredients, mealType)
+          const aiRecipe = await generateRecipeWithAI(ingredients, mealType)
           if (aiRecipe) {
             menuItemsFromMatched.push({ recipe: aiRecipe, mealType })
             aiResults.push(aiRecipe)
